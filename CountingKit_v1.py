@@ -1,8 +1,16 @@
 import sys
 import RPi.GPIO as GPIO
+import paho.mqtt.client as mqtt_client
 
 SENSOR1_GPIO = 5
 SENSOR2_GPIO = 6
+
+mqttBroker = '100.100.100.110'
+port = 1883
+
+client = mqtt_client.Client("CK_0001")
+client.connect(mqttBroker) 
+
 
 def signal_handler(sig, frame):
     GPIO.cleanup()
