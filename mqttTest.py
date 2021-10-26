@@ -46,3 +46,5 @@ client.loop_start()
 
 while True:
     client.publish("CK.Pass", SENSOR1_COUNTER)
+    client.publish("CK.Reject", SENSOR2_COUNTER)
+    time.sleep(1)
